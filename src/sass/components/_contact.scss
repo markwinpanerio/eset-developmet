@@ -1,0 +1,70 @@
+.contact {
+    padding: 170px 0;
+    background-color: $color-black;
+
+    &-inner {
+        max-width: 812px + 60;
+        padding: 0 30px;
+        margin: 0 auto;
+    }
+
+    &-title {
+        text-align: center;
+        font: {
+            size: 24px;
+            weight: bold;
+        }
+        line-height: 32px;
+        margin-bottom: 36px;
+    }
+
+    &-form {
+        label {
+            display: block;
+            width: 100%;
+        }
+
+        label[for=accept] {
+            input {
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 5px;
+            }
+
+            p {
+                width: calc(100% - 20px);
+                padding-left: 20px;
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 14px;
+            }
+        }
+
+        input:not([type=checkbox]),
+        textarea,
+        select {
+            width: 100%;
+            outline: none;
+        }
+
+        input:not([type=checkbox]) {
+            height: 40px;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        textarea {
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        &-item {
+            margin-bottom: 20px;
+        }
+
+        &-button {
+            text-align: center;
+            margin-top: 32px;
+        }
+    }
+}

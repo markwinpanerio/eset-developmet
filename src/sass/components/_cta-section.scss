@@ -1,0 +1,107 @@
+.cta-section {
+    padding: 104px 0;
+    position: relative;
+
+    &-recognition {
+        background-color: $color-black;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: {
+                image: url('../images/background/city-background.jpeg');
+                size: 200%;
+                position: right bottom;
+            }
+            opacity: 0.15;
+        }
+    }
+
+    &-computer {
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: {
+                image: url('../images/background/cta-computer.png');
+                size: 100%;
+                position: right bottom;
+            }
+        }
+    }
+
+    &-inner {
+        position: relative;
+        z-index: 1;
+        padding: 0 30px;
+
+        .cta-section-recognition & {
+            text-align: center;
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .cta-section-computer & {
+            color: $color-black;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    }
+
+    &-content {
+        .cta-section-computer & {
+            max-width: 484px;
+        }
+    }
+
+    &-title {
+        font: {
+            size: 36px;
+            weight: bold;
+        }
+
+        .cta-section-computer & {
+            font-size: 24px;
+            line-height: 36px;
+        }
+    }
+
+    &-description {
+        margin-top: 30px;
+        font-size: 18px;
+
+        .cta-section-computer & {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+    
+    &-image {
+        display: flex;
+        justify-content: center;
+        margin-top: 64px;
+    }
+
+    &-link {
+        display: block;
+    }
+
+    &-button {
+        margin-top: 32px;
+    }
+
+    &-item {
+        &:not(:last-child) {
+            margin-right: 140px
+        }
+    }
+}

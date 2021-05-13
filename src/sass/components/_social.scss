@@ -1,0 +1,31 @@
+.social {
+    
+    &-list {
+        display: flex;
+        justify-content: center;
+
+        li {
+            display: inline-block;
+
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    &-link {
+        background-color: $color-btn-secondary;
+        border-radius: 50%;
+        width: 33px;
+        height: 33px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        i {
+            font-size: 16px;
+            color: $color-white;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+$font-smoothing: antialiased;
+$text-rendering: auto;
+$base-font-family: 'Segoe UI', sans-serif;;
+$font-anton: $base-font-family;
+$base-font-size: 14px;
+$base-font-color: #fff;
+$base-background-color: #fff;
+$color-white: #fff;
+$color-primary: #0096A1;
+$color-black: #000;
+$color-gray: #707070;
+
+$breakpoint-tablet: 1180px;
+$breakpoint-mobile: 768px;
+$breakpoint-bootstrap-lg: 992px;
+
+$breakpoint-mobile-520: 520px;
+$breakpoint-mobile-425: 425px;
+$breakpoint-mobile-375: 375px;
+$breakpoint-mobile-min: 320px;
+
+$site-size: 1226px + 60;
+$mobile-max-width: 540px;
+
+$color-btn-primary: #8DC53F;
+$color-btn-secondary: #0096A1;

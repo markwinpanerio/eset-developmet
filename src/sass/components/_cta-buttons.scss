@@ -1,0 +1,96 @@
+.cta-buttons {
+
+    &-row {
+        margin: 0;
+    }
+
+    &-item {
+        overflow: hidden;
+    }
+
+    &-link {
+        color: $color-white;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-white;
+        }
+    }
+
+    &-image {
+        text-align: right;
+
+        img {
+            display: block;
+            margin: 0 0 0 auto;
+            position: relative;
+            right: -20px;
+        }
+    }
+
+    &-title {
+        text-transform: uppercase;
+        font: {
+            size: 14px;
+            weight: bold;
+        }
+    }
+
+    &-description {
+        font: {
+            size: 24px;
+            weight: normal;
+        }
+        margin-top: 32px;
+        line-height: 32px;
+        min-height: 181px;
+    }
+
+    &-content {
+        padding: 0 50px 90px;
+    }
+
+    &-more {
+        display: block;
+        text-align: right;
+        font: {
+            size: 12px;
+            weight: bold;
+        }
+        text-transform: uppercase;
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            width: 27px;
+            height: 10px;
+            position: relative;
+            margin-left: 15px;
+
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+                height: 1px;
+                background-color: $color-white;
+            }
+
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+                right: 0;
+                border: 1px solid $color-white;
+                width: 6px;
+                height: 6px;
+                border-left: 0;
+                border-bottom: 0;
+            }
+        }
+    }
+}

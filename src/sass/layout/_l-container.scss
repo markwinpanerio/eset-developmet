@@ -1,0 +1,10 @@
+.l-container {
+    padding: 0 30px;
+    max-width: $site-size;
+    width: 100%;
+    margin: 0 auto;
+
+    @include max-screen($mobile-max-width) {
+        padding: 0 27px;
+    }
+}
