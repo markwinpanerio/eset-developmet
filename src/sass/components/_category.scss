@@ -2,7 +2,7 @@
     background-color: $color-white;
     color: $color-black;
 
-    &-header-nav {
+    .override-bootstrap &-header-nav {
         display: flex;
         flex-wrap: wrap;
         border: 0;

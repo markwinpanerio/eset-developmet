@@ -3,6 +3,7 @@ jQuery(function($) {
     const $masonryGrid = $('.js-masonry-grid');
     const $categoryItem = $('.js-category-item');
     const $tabpane = $('.category-content').find('.tab-pane');
+    const $landingSlider = $('.js-landing-slider');
 
     $(window).on('scroll', function() {
         if($(window).scrollTop() > 50) {
@@ -36,7 +37,9 @@ jQuery(function($) {
         })
     }
 
-    $('button[data-bs-toggle="tab"]').on('shown.bs.tab', updateMasonry);
+    $('.nav-tabs').on('click', function(){
+        setTimeout(updateMasonry, 200)
+    })
 
     $categoryItem.on('click', function(e) {
         e.preventDefault();
@@ -51,5 +54,10 @@ jQuery(function($) {
         } else {
             $header.removeClass('is-sticky');
         }
+
+        $landingSlider.slick({
+            arrows: false,
+            dots: true
+        });
     })
 })

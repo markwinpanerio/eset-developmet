@@ -148,4 +148,37 @@
             object-position: center;
         }
     }
+
+    //override slick
+
+    .slick-dots {
+        bottom: auto;
+        top: 40px;
+        text-align: left;
+        padding-left: 130px;   
+
+        li {
+            width: 30px;
+            height: 4px;
+
+            button {
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $color-white;
+            }
+
+            &.slick-active button {
+                background-color: $color-btn-primary;
+            }
+        }
+
+        li.slick-active button {
+            color: $color-btn-primary;
+        }
+
+        li button:before {
+            display: none;
+        }
+    }
 }

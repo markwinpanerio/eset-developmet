@@ -5,6 +5,7 @@ jQuery(function ($) {
   var $masonryGrid = $('.js-masonry-grid');
   var $categoryItem = $('.js-category-item');
   var $tabpane = $('.category-content').find('.tab-pane');
+  var $landingSlider = $('.js-landing-slider');
   $(window).on('scroll', function () {
     if ($(window).scrollTop() > 50) {
       $header.addClass('is-sticky');
@@ -37,7 +38,9 @@ jQuery(function ($) {
     });
   };
 
-  $('button[data-bs-toggle="tab"]').on('shown.bs.tab', updateMasonry);
+  $('.nav-tabs').on('click', function () {
+    setTimeout(updateMasonry, 200);
+  });
   $categoryItem.on('click', function (e) {
     e.preventDefault();
     var $this = $(this);
@@ -50,5 +53,10 @@ jQuery(function ($) {
     } else {
       $header.removeClass('is-sticky');
     }
+
+    $landingSlider.slick({
+      arrows: false,
+      dots: true
+    });
   });
 });
