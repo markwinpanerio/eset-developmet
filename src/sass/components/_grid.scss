@@ -1,0 +1,30 @@
+.grid {
+    color: $color-black;
+    display: flex;
+    flex-wrap: wrap;
+
+    &-sizer {
+        width: 33.33%;
+    }
+
+    &-item {
+        width: 33.33%;
+        padding: 0 9px;
+        margin-bottom: 18px;
+
+        @media (max-width:768px) {
+            width: 100%;
+        }
+    }
+
+    &-box {
+        background-color: $color-white;
+        padding: 24px 30px;
+        border: 1px solid #E5E5E5;
+        border-radius: 10px;
+        
+        p {
+            font-size: 18px;
+        }
+    }
+  }
