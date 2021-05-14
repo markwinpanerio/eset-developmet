@@ -3,6 +3,27 @@
     padding: 45px 0;
     color: $color-black;
 
+    &-fixed {
+        position: absolute;
+        bottom: 0;
+        z-index: 15;
+        width: 100%;
+        background-color: transparent;
+
+        .social-link {
+            background-color: $color-white;
+            color: $color-black;
+
+            i {
+                color: $color-black;
+            }
+        }
+
+        .footer-copyright small {
+            color: $color-white;
+        }
+    }
+
     &-copyright {
         text-align: right;
 

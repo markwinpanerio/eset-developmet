@@ -2,6 +2,64 @@
     padding: 170px 0;
     background-color: $color-black;
 
+    //modifier
+    &-full {
+        width: 100%;
+        min-height: 100vh;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: {
+            color: $color-black;
+            image: url('../images/background/contact-bg.png');
+            size: 100%;
+            position: 100% 140%;
+            repeat: no-repeat;
+        };
+
+        .contact-title {
+            text-align: left;
+        }
+
+        .container-fluid {
+            padding: 0 140px;
+            margin-top: 60px;
+        }
+
+        .contact-form-button {
+            text-align: left;
+        }
+    }
+
+    &-content {
+        max-width: 596px;
+
+        &-title {
+            font: {
+                size: 48px;
+                weight: bold;
+            }
+            color: $color-white;
+            line-height: 72px;
+        }
+
+        &-description {
+            margin-top: 48px;
+            font: {
+                size: 24px;
+            }
+            line-height: 36px;
+            color: $color-white;
+        }
+
+        &-logos {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 64px;
+        }
+    }
+
     &-inner {
         max-width: 812px + 60;
         padding: 0 30px;
@@ -40,6 +98,27 @@
             }
         }
 
+        label[for=country] {
+            position: relative;
+
+            &:before {
+                content: "";
+                display: block;
+                position:  absolute;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+                width: 0;
+                height: 0;
+                border: {
+                    top: 6px solid $color-black;
+                    right: 6px solid transparent;
+                    left: 6px solid transparent;
+                    bottom: 0;
+                }
+            }
+        }
+
         input:not([type=checkbox]),
         textarea,
         select {
@@ -51,6 +130,20 @@
             height: 40px;
             border-radius: 20px;
             padding: 20px;
+            color: $color-gray-text;
+
+            &::placeholder {
+                color: $color-gray-text;    
+            }
+        }
+
+        select {
+            height: 40px;
+            border-radius: 20px;
+            padding: 0 15px;
+            color: $color-gray-text;
+            -webkit-appearance: none;
+            -moz-appearance: none;
         }
 
         textarea {
