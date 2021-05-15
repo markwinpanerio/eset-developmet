@@ -1,0 +1,159 @@
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background-color: $color-overlay;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    opacity: 0;
+
+    @include max-screen(1080px) {
+        overflow: scroll;
+    }
+
+    &-container {
+        position: relative;
+        width: calc(1200px - 60px);
+        min-height: 645px;
+        padding: 0 30px;
+        margin: 0 auto;
+
+        @include max-screen(1080px) {
+            width: 100%;
+            height: auto;
+            min-height: auto;
+        }
+
+        img,
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+
+            @include max-screen(1080px) {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    &-image {
+        background-color: #004C55;
+        overflow: hidden;
+
+        &-inner {
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            position: relative;
+            height: 100%;
+            left: 12px;
+        }
+    }
+
+    &-contact {
+        background-color: $color-gray-light;
+
+        &-open {
+            @include max-screen(768px) {
+                align-items: flex-start;
+            }
+
+            .custom-modal-close {
+                @include max-screen(768px) {
+                    top: -65px;
+                    right: 10px;
+                }
+            }
+        }
+        
+        &-inner {
+            padding: 70px;
+            text-align: left;
+
+            @include max-screen(768px) {
+                padding: 32px 23px;
+            }
+
+            .contact-title {
+                text-align: left;
+                color: $color-primary;
+
+                @include max-screen(768px) {
+                    margin-top: 0;
+                }
+            }
+
+            .contact-form input:not([type=checkbox]), .contact-form select, .contact-form textarea {
+                border: 0;
+            }
+
+            .contact-form label[for=accept] p {
+                color: $color-gray-text-dark;
+                line-height: 21px;
+            }
+
+
+            .contact-form-button {
+                text-align: right;
+
+                @include max-screen(768px) {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &-close {
+        position: absolute;
+        right: -60px;
+        top: -60px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        @include max-screen(1080px) {
+            top: -80%;
+            right: 30px;
+        }
+        
+        .icon {
+            width: 30px;
+            height: 30px;
+            position: relative;
+
+            span {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                height: 2px;
+                background-color: $color-white;
+                display: block;
+
+                &:first-child {
+                    transform: translateY(-50%) rotate(-45deg);
+                }
+
+                &:last-child {
+                    transform: translateY(-50%) rotate(45deg);
+                }
+            }
+        }
+    }
+}
