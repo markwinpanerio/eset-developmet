@@ -5,6 +5,20 @@
     align-items: center;
     justify-content: center;
 
+    @include max-screen(1440px) {
+        padding: (100px + 111) 0 136px;
+    }
+
+    @include max-screen(1080px) {
+        padding: 93px 0 80px;
+    }
+
+    .container-fluid {
+        @include max-screen(768px) {
+            padding: 0;
+        }   
+    }
+
     &-inner {
         background: {
             color: $color-black;
@@ -13,10 +27,27 @@
             position: 100% 140%;
             repeat: no-repeat;
         };
+
+        @include max-screen(768px) {
+            background-position: bottom;
+        }
     }
     
     &-content {
         padding: 102px 0 52px 140px;
+
+        @include max-screen(1680px) {
+            padding: 102px 0 52px 80px;
+        }
+
+        @include max-screen(1080px) {
+            padding: 100px 0 50px;
+        }
+
+        @include max-screen(768px) {
+            padding: 80px 20px 0;
+            text-align: center;
+        }   
     }
 
     &-upper-title {
@@ -24,6 +55,7 @@
             size: 14px;
             weight: bold;
         }
+        text-transform: uppercase;
     }
 
     &-main-title {
@@ -33,6 +65,12 @@
         }
         line-height: 43px;
         margin: 24px 0 32px;
+
+        @include max-screen(1080px) {
+            font-size: 24px;
+            line-height: 28px;
+            margin: 24px 0;
+        } 
     }
 
     &-description {
@@ -40,6 +78,11 @@
             size: 24px;
         }
         line-height: 34px;
+
+        @include max-screen(1080px) {
+            font-size: 16px;
+            line-height: 24px;
+        } 
     }
     
     &-button {
@@ -51,6 +94,10 @@
         vertical-align: middle;
         margin-left: 50px;
         cursor: pointer;
+
+        @include max-screen(768px) {
+            margin-left: 10px;
+        }
         
         .icon {
             display: inline-block;
@@ -97,9 +144,21 @@
         height: 100%;
         position: relative;
 
+        @include max-screen(768px) {
+            padding-top: 66.65%;
+        }
+
         &-video {
             position: relative;
             height: 100%;
+            
+            @include max-screen(768px) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
 
             .icon-play {
                 display: inline-block;
@@ -151,11 +210,28 @@
 
     //override slick
 
+    .slick-slide {
+        .row {
+            @include max-screen(1080px) {
+                flex-direction: column-reverse;
+            }
+        }
+    }
     .slick-dots {
         bottom: auto;
         top: 40px;
         text-align: left;
         padding-left: 130px;   
+
+        @include max-screen(1680px) {
+            padding-left: 70px;
+        }
+
+        @include max-screen(1080px) {
+            padding: 0 20px;
+            top: 42%;
+            text-align: center;
+        }
 
         li {
             width: 30px;

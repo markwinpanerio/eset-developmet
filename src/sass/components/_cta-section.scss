@@ -2,6 +2,34 @@
     padding: 104px 0;
     position: relative;
 
+    &:not(.cta-section-computer) {
+        @include max-screen(1080px) {                
+            padding: 90px 0;
+        }
+    }
+
+    &-computer {
+        @include max-screen(1080px) {                
+            padding: 0;
+        }
+    }
+    
+    &:not(.cta-section-recognition) {
+        .container-fluid {
+            @include max-screen(1080px) {                
+                padding: 64px 30px;
+                background-color: $color-gray-bg-light;
+                text-align: center;;
+            }
+        }
+
+        .cta-section-inner {
+            @include max-screen(1080px) {                
+                padding: 0;
+            }
+        }
+    }
+
     &-recognition {
         background-color: $color-black;
 
@@ -35,6 +63,13 @@
                 image: url('../images/background/cta-computer.png');
                 size: 100%;
                 position: right bottom;
+            }
+
+            @include max-screen(1080px) {     
+                background-size: cover;           
+                background-position: 66%;
+                position: relative;
+                padding-top: 100%;
             }
         }
     }
@@ -89,6 +124,11 @@
         display: flex;
         justify-content: center;
         margin-top: 64px;
+        flex-wrap: wrap;
+
+        @include max-screen(768px) {
+            justify-content: space-between;
+        }
     }
 
     &-link {
@@ -100,8 +140,31 @@
     }
 
     &-item {
+
+        @include max-screen(768px) {
+            text-align: center;
+        }
+
         &:not(:last-child) {
-            margin-right: 140px
+            margin-right: 140px;
+
+            @include max-screen(1080px) {
+                margin-right: 80px;   
+            }
+
+            @include max-screen(768px) {
+                margin-right: 0;
+            }
+            
+        }
+    }
+
+    &-link {
+        img {
+            @include max-screen(768px) {
+                height: 60px;
+                width: auto;
+            }
         }
     }
 }

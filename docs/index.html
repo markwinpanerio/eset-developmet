@@ -22,7 +22,11 @@
                     <img src="./images/logo/logo-white.png" alt="" width="114" height="49">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -38,8 +42,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#" >Enterprise</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="u-pc-hidden nav-link" href="./contact-us.html" >Contact Us</a>
+                        </li>
                     </ul>
-                    <a href="./contact-us.html" class="btn btn-primary">Contact Us</a>
+                    <a href="./contact-us.html" class="u-sp-hidden btn btn-primary">Contact Us</a>
                 </div>
             </div>
         </nav>
@@ -50,7 +57,7 @@
             <div class="js-landing-slider">
                 <div class="slide">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-sm-12 col-lg-6">
                             <div class="slider-content">
                                 <h3 class="slider-upper-title">Product Name</h3>
                                 <h2 class="slider-main-title">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod</h2>
@@ -60,7 +67,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col-sm-12 col-lg-6">
                             <div class="slider-image">
                                 <img src="./images/slider/catch-image.png" alt="">
                             </div>
@@ -69,7 +76,7 @@
                 </div>
                 <div class="slide">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-sm-12 col-lg-6">
                             <div class="slider-content">
                                 <h3 class="slider-upper-title">Product Name</h3>
                                 <h2 class="slider-main-title">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod</h2>
@@ -79,7 +86,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col-sm-12 col-lg-6">
                             <div class="slider-image">
                                 <img src="./images/slider/catch-image.png" alt="">
                             </div>
@@ -92,7 +99,7 @@
 
     <section class="cta-buttons">
         <div class="row cta-buttons-row">
-            <div class="col cta-buttons-item" style="background-color: #0B8E98;">
+            <div class="col-sm-12 col-md-6 col-lg-3 cta-buttons-item" style="background-color: #0B8E98;">
                 <article class="cta-buttons-card">
                     <a href="#" class="cta-buttons-link">
                         <div class="cta-buttons-image">
@@ -106,7 +113,7 @@
                     </a>
                 </article>
             </div>
-            <div class="col cta-buttons-item" style="background-color: #07BAC5; ">
+            <div class="col-sm-12 col-md-6 col-lg-3 cta-buttons-item" style="background-color: #07BAC5; ">
                 <article class="cta-buttons-card">
                     <a href="#" class="cta-buttons-link">
                         <div class="cta-buttons-image">
@@ -120,7 +127,7 @@
                     </a>
                 </article>
             </div>
-            <div class="col cta-buttons-item"  style="background-color: #0B8E98; ">
+            <div class="col-sm-12 col-md-6 col-lg-3 cta-buttons-item"  style="background-color: #0B8E98; ">
                 <article class="cta-buttons-card">
                     <a href="#" class="cta-buttons-link">
                         <div class="cta-buttons-image">
@@ -134,7 +141,7 @@
                     </a>
                 </article>
             </div>  
-            <div class="col cta-buttons-item"  style="background-color: #004C55; ">
+            <div class="col-sm-12 col-md-6 col-lg-3 cta-buttons-item"  style="background-color: #004C55; ">
                 <article class="cta-buttons-card">
                     <a href="#" class="cta-buttons-link">
                         <div class="cta-buttons-image">
@@ -199,22 +206,22 @@
             <h2 class="contact-title">Complete the form below to have a sales representative contact you about lorem ipsum dolor sit amet.</h2>
             <form action="/" class="contact-form">
                 <div class="row">
-                    <div class="col-lg-6 contact-form-item">
+                    <div class="col-sm-12 col-lg-6 contact-form-item">
                         <label for="first-name">
                             <input type="text" name="first-name" id="first-name" placeholder="First Name *">
                         </label>
                     </div>
-                    <div class="col-lg-6 contact-form-item">
+                    <div class="col-sm-12 col-lg-6 contact-form-item">
                         <label for="email">
                             <input type="email" name="email" id="email" placeholder="Email *">
                         </label>
                     </div>
-                    <div class="col-lg-6 contact-form-item">
+                    <div class="col-sm-12 col-lg-6 contact-form-item">
                         <label for="last-name">
                             <input type="text" name="last-name" id="last-name" placeholder="Last Name *">
                         </label>
                     </div>
-                    <div class="col-lg-6 contact-form-item">
+                    <div class="col-sm-12 col-lg-6 contact-form-item">
                         <label for="phone">
                             <input type="text" name="phone" id="phone" placeholder="Phone *">
                         </label>
@@ -241,12 +248,12 @@
     <footer class="footer">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col">
+                <div class="footer-item col-sm-12 col-lg-4">
                     <a href="#" class="footer-brand">
                         <img src="./images/logo/logo-footer.png" alt="" width="365" height="45">
                     </a>
                 </div>
-                <div class="col">
+                <div class="footer-item col-sm-12 footer-sns col-lg-4">
                     <div class="social">
                         <ul class="social-list m-0">
                             <li>
@@ -277,7 +284,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col footer-copyright">
+                <div class="footer-item col-sm-12 col-lg-4 footer-copyright">
                     <small>© 2020 ESSET, Inc.</small>
                 </div>
             </div>

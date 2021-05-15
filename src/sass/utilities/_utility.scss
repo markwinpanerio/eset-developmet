@@ -1,6 +1,6 @@
 .u-sp-hidden {
     @include max-screen($breakpoint-mobile) {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -12,7 +12,7 @@
 
 .u-pc-hidden {
     @include min-screen($breakpoint-mobile) {
-        display: none;
+        display: none !important;
     }
 }
 

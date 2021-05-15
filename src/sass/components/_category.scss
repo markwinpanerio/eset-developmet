@@ -1,11 +1,118 @@
 .category {
     background-color: $color-white;
     color: $color-black;
+    position: relative;
+
+    &-header {
+
+        &-mobile {
+            padding: 20px 15px 32px;
+            display: flex;
+            align-items: center;
+        }
+
+        &-button {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+                position: relative;
+                width: 18px;
+                height: 16px;
+
+                span {
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    position: absolute;
+                    background: $color-primary; 
+                    left: 0;
+                    opacity: 1;
+                    transition: opacity 0.15s ease-in-out,
+                                background 0.15s ease-in-out,
+                                transform 0.15s ease-in-out,
+                                top 0.15s ease-in-out,
+                                left 0.15s ease-in-out,
+                                bottom 0.15s ease-in-out;
+
+                    &:first-child {
+                        top: 0;
+                        transform-origin: left top;
+                    }
+
+                    &:nth-child(2) {
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+
+                    &:last-child {
+                        bottom: 0;
+                        transform-origin: left bottom;
+                        width: 50%;
+                    }
+                }
+            }
+
+            &.is-active {
+                span {
+                    background-color: $color-primary;
+                }
+
+                span:first-child {
+                    width: 100%;
+                    transform: rotate(45deg);
+                    top: -1px;
+                    left: 3px;
+                }
+
+                span:nth-child(2) {
+                    opacity: 0;
+                }
+
+                span:last-child {
+                    width: 100%;
+                    transform: rotate(-45deg);
+                    bottom: 3px;
+                    left: 3px;
+                }
+            }
+        }
+
+        &-title {
+            font: {
+                size: 16px;
+                weight: bold;
+            }
+            line-height: 16px;
+            color: $color-primary;
+            margin-left: 10px;
+            text-transform: uppercase;
+        }
+    }
 
     .override-bootstrap &-header-nav {
         display: flex;
         flex-wrap: wrap;
         border: 0;
+
+        @include max-screen(768px) {
+            display: none;
+            z-index: 1;
+            background-color: $color-white;
+            position: absolute;
+            top: 93px;
+            width: calc(100% - 60px);
+            left: 0px;
+            right: 0px;
+            margin: 0px auto;
+            border: 1px solid $color-primary;
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 20px 0;
+        }
 
         //override bootstrap default style
         .nav-link {
@@ -24,6 +131,14 @@
             margin: 0;
             border: 0;
 
+            @include max-screen(768px) {
+                width: 100%;
+                background-color: $color-white;
+                font-size: 14px;
+                color: $color-black;
+                padding: 10px 23px 23px;
+            }
+
             &:not(:last-child) {
                 border-right: 1px solid $color-white;
             }
@@ -39,6 +154,10 @@
         max-width: 1366px + 60;
         margin: 0 auto;
         padding: 96px 30px 234px;
+
+        @include max-screen(1080px) {
+            padding: 10px 30px 64px;
+        }
     }
 
     &-content {
@@ -51,17 +170,31 @@
                 size: 54px;
                 weight: bold;
             }
-            margin-bottom: 32px
+            margin-bottom: 32px;
+
+            @include max-screen(1080px) {
+                font-size: 24px;
+                line-height: 36px;
+            }
         }
 
         &-description {
             font: {
                 size: 24px;
             };
+
+            @include max-screen(1080px) {
+                font-size: 18px;
+                line-height: 24px;
+            }
         }
 
         &-card {
             margin-top: 96px;
+
+            @include max-screen(1080px) {
+                margin-top: 32px;
+            }
         }
     }
 
@@ -74,6 +207,17 @@
 .category-sidebar {
     padding: 32px 23px;
 
+    @include max-screen(1080px) {
+        position: absolute;
+        top: 90px;
+        right: 0;
+        left: 0;
+        background-color: $color-white;
+        width: calc(100% - 60px);
+        margin: 0 auto;
+        display: none;
+    }
+
     &-title {
         color: $color-primary;
         font-weight: bold;
@@ -81,6 +225,31 @@
         line-height: 24px;
         margin-bottom: 24px;
         text-transform: uppercase;
+    }
+
+    &-icon {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include min-screen(1080px) {
+            display: none;
+        }
+
+        span {
+            display: block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: $color-primary;
+            margin: 2px 0;
+        }
     }
 
     &-search {

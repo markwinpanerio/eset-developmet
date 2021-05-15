@@ -3,12 +3,23 @@
     background-color: $color-white;
     color: $color-black;
 
+    @include max-screen(1080px) {
+        padding: 64px 0;
+    }
+
     &-secondary {
         background-color: $color-primary;
         color: $color-white;
 
         .inner-content-image {
             margin: 0;
+        }
+
+        .inner-content-description {
+            @include max-screen(1080px) {
+                margin-top: 0;
+                text-align: center;
+            }
         }
     }
 
@@ -23,17 +34,36 @@
     &-image {
         margin: 96px 0;
 
+        @include max-screen(1080px) {
+            margin: 64px 0 0;
+        }
+
+        .col-sm-12 {
+            @include max-screen(1080px) {
+                padding: 0;
+            }
+        }
+
         &-reverse {
             flex-direction: row-reverse;
 
             .inner-content-description {
                 padding: 0 66px 0 0;
+
+                @include max-screen(1080px) {
+                    padding: 0;
+                }
             }
         }
     }
 
     &-description {
         padding: 0 0 0 66px;
+
+        @include max-screen(1080px) {
+            padding: 0;
+            margin-top: 30px;
+        }
 
         h3 {
             font: {
@@ -42,19 +72,38 @@
             }
             line-height: 32px;
             margin-bottom: 32px;
+
+            @include max-screen(1080px) {
+                font-size: 18px;
+                margin-bottom: 24px;
+                line-height: 25px;
+            }
         }
 
         p {
             font-size: 18px;
             line-height: 21px;   
 
+            @include max-screen(1080px) {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
             &:not(:last-of-type) {
                 margin-bottom: 16px;
+
+                @include max-screen(1080px) {
+                    margin-bottom: 10px;
+                }
             }
         }
 
         .btn {
             margin-top: 48px;
+
+            @include max-screen(1080px) {
+                margin-top: 24px;
+            }
         }
     }
 
@@ -68,6 +117,12 @@
         max-width: 812px;
         margin: 0 auto;
         margin-bottom: 96px;
+
+        @include max-screen(1080px) {
+            font-size: 21px;
+            line-height: 25px;
+            margin-bottom: 32px;
+        }
     }
 
     img {

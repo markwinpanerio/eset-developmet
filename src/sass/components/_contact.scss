@@ -2,6 +2,10 @@
     padding: 170px 0;
     background-color: $color-black;
 
+    @include max-screen(1080px) {
+        padding: 64px 0;
+    }
+
     //modifier
     &-full {
         width: 100%;
@@ -18,8 +22,18 @@
             repeat: no-repeat;
         };
 
+        @include max-screen(1080px) {
+            background-position: bottom;
+            background-size: 100%;
+            padding: 60px 0 321px;
+        }
+
         .contact-title {
             text-align: left;
+
+            @include max-screen(1080px) {
+                text-align: center;
+            }
         }
 
         .container-fluid {
@@ -29,6 +43,10 @@
 
         .contact-form-button {
             text-align: left;
+
+            @include max-screen(1080px) {
+                text-align: center;
+            }
         }
     }
 
@@ -42,6 +60,15 @@
             }
             color: $color-white;
             line-height: 72px;
+
+            @include max-screen(1080px) {
+                font: {
+                    size: 28px;
+                    weight: bold;
+                }
+                line-height: 33px;
+                text-align: center;
+            }
         }
 
         &-description {
@@ -51,12 +78,32 @@
             }
             line-height: 36px;
             color: $color-white;
+
+            @include max-screen(1080px) {
+                margin-top: 32px;
+                font: {
+                    size: 18px;
+                }
+                line-height: 27px;
+                text-align: center;
+            }
         }
 
         &-logos {
             display: flex;
             justify-content: space-between;
             margin-top: 64px;
+
+            @include max-screen(1080px) {
+                margin-top: 32px;
+            }
+
+            img {
+                @include max-screen(1080px) {
+                    height: 40px;
+                    width: auto;
+                }
+            }
         }
     }
 
@@ -74,6 +121,16 @@
         }
         line-height: 32px;
         margin-bottom: 36px;
+
+        @include max-screen(1080px) {
+            font: {
+                size: 18px;
+                weight: bold;
+            }
+            line-height: 27px;
+            margin-top: 64px;
+        }
+        
     }
 
     &-form {
@@ -95,6 +152,10 @@
                 display: inline-block;
                 vertical-align: middle;
                 font-size: 14px;
+
+                @include max-screen(1080px) {
+                    line-height: 21px;
+                }
             }
         }
 

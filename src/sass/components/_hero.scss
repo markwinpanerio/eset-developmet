@@ -11,6 +11,10 @@
     }
     position: relative;
 
+    @include max-screen(1080px) {
+        min-height: 428px;
+    }
+
     &:before {
         content: "";
         display: block;
@@ -37,5 +41,10 @@
         text-align: center;
         line-height: 64px;
         color: $color-white;
+
+        @include max-screen(1080px) {
+            font-size: 28px;
+            line-height: 33px;
+        }
     }
 }

@@ -19,11 +19,14 @@
         <nav class="navbar navbar-expand-lg" id="js-header">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
-                    <img class="white" src="./images/logo/logo-white.png" alt="" width="114" height="49">
-                    <img class="primary" src="./images/logo/logo-primary.svg" alt="" width="114" height="49">
+                    <img src="./images/logo/logo-white.png" alt="" width="114" height="49">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -31,7 +34,7 @@
                             <a class="nav-link" href="./cybersecurity-training.html">Cybersecurity Training</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="./cybersecurity-landscape.html">Cybersecurity landscape</a>
+                            <a class="nav-link" href="./cybersecurity-landscape.html">Cybersecurity landscape</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" >SMB</a>
@@ -39,8 +42,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#" >Enterprise</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="u-pc-hidden nav-link" href="./contact-us.html" >Contact Us</a>
+                        </li>
                     </ul>
-                    <a href="./contact-us.html" class="btn btn-primary">Contact Us</a>
+                    <a href="./contact-us.html" class="u-sp-hidden btn btn-primary">Contact Us</a>
                 </div>
             </div>
         </nav>
@@ -107,6 +113,16 @@
 
     <div class="category">
         <nav class="category-header">
+            <div class="category-header-mobile u-pc-hidden">
+                <div class="category-header-button">
+                    <div class="icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <h2 class="category-header-title">THREATS AND TRENDS</h2>
+            </div>
             <div class="category-header-nav nav nav-tabs" id="nav-tab" role="tablist">
                 <button class="nav-link active" id="js-tab-label-1" data-bs-toggle="tab" data-bs-target="#js-tab-1" type="button" role="tab" aria-controls="js-tab-1" aria-selected="true">Threats and Trends</button>
                 <button class="nav-link" id="js-tab-label-2" data-bs-toggle="tab" data-bs-target="#js-tab-2" type="button" role="tab" aria-controls="js-tab-2" aria-selected="false">Research</button>
@@ -123,7 +139,7 @@
                     </div>
                     <div class="category-content-card">
                         <div class="row">
-                            <div class="col-sm-9">
+                            <div class="col-sm-12 col-md-9">
                                 <div class="grid js-masonry-grid">
                                     <div class="grid-sizer"></div>
                                     <div class="grid-item">
@@ -209,8 +225,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <aside class="category-sidebar">
+                            <div class="col-sm-12 col-md-3">
+                                <div class="category-sidebar-icon js-category-sidebar-icon">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <aside class="category-sidebar js-category-sidebar-navigation">
                                     <h2 class="category-sidebar-title">Threats and Trends</h2>
                                     <form class="category-sidebar-search" action="/">
                                         <label for="search">
@@ -264,7 +285,7 @@
                     </div>
                     <div class="category-content-card">
                         <div class="row">
-                            <div class="col-sm-9">
+                            <div class="col-sm-12 col-md-9">
                                 <div class="grid js-masonry-grid">
                                     <div class="grid-sizer"></div>
                                     <div class="grid-item">
@@ -350,8 +371,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <aside class="category-sidebar">
+                            <div class="col-sm-12 col-md-3">
+                                <div class="category-sidebar-icon js-category-sidebar-icon">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <aside class="category-sidebar js-category-sidebar-navigation">
                                     <h2 class="category-sidebar-title">Research</h2>
                                     <form class="category-sidebar-search" action="/">
                                         <label for="search">
@@ -369,7 +395,7 @@
                                             </a>
                                             <ul class="js-category-subitem">
                                                 <li>
-                                                    <a href="#" class="is-active">Sub Category 1</a>
+                                                    <a href="#">Sub Category 1</a>
                                                 </li>
                                                 <li>
                                                     <a href="#">Sub Category 2</a>
@@ -405,7 +431,7 @@
                     </div>
                     <div class="category-content-card">
                         <div class="row">
-                            <div class="col-sm-9">
+                            <div class="col-sm-12 col-md-9">
                                 <div class="grid js-masonry-grid">
                                     <div class="grid-sizer"></div>
                                     <div class="grid-item">
@@ -491,8 +517,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <aside class="category-sidebar">
+                            <div class="col-sm-12 col-md-3">
+                                <div class="category-sidebar-icon js-category-sidebar-icon">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <aside class="category-sidebar js-category-sidebar-navigation">
                                     <h2 class="category-sidebar-title">News</h2>
                                     <form class="category-sidebar-search" action="/">
                                         <label for="search">
@@ -510,7 +541,7 @@
                                             </a>
                                             <ul class="js-category-subitem">
                                                 <li>
-                                                    <a href="#" class="is-active">Sub Category 1</a>
+                                                    <a href="#">Sub Category 1</a>
                                                 </li>
                                                 <li>
                                                     <a href="#">Sub Category 2</a>
@@ -546,7 +577,7 @@
                     </div>
                     <div class="category-content-card">
                         <div class="row">
-                            <div class="col-sm-9">
+                            <div class="col-sm-12 col-md-9">
                                 <div class="grid js-masonry-grid">
                                     <div class="grid-sizer"></div>
                                     <div class="grid-item">
@@ -632,8 +663,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <aside class="category-sidebar">
+                            <div class="col-sm-12 col-md-3">
+                                <div class="category-sidebar-icon js-category-sidebar-icon">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <aside class="category-sidebar js-category-sidebar-navigation">
                                     <h2 class="category-sidebar-title">Industry Recognition</h2>
                                     <form class="category-sidebar-search" action="/">
                                         <label for="search">
@@ -651,7 +687,7 @@
                                             </a>
                                             <ul class="js-category-subitem">
                                                 <li>
-                                                    <a href="#" class="is-active">Sub Category 1</a>
+                                                    <a href="#">Sub Category 1</a>
                                                 </li>
                                                 <li>
                                                     <a href="#">Sub Category 2</a>
@@ -703,22 +739,22 @@
             <h2 class="contact-title">Complete the form below to have a sales representative contact you about lorem ipsum dolor sit amet.</h2>
             <form action="/" class="contact-form">
                 <div class="row">
-                    <div class="col-lg-6 contact-form-item">
+                    <div class="col-sm-12 ol-lg-6 contact-form-item">
                         <label for="first-name">
                             <input type="text" name="first-name" id="first-name" placeholder="First Name *">
                         </label>
                     </div>
-                    <div class="col-lg-6 contact-form-item">
+                    <div class="col-sm-12 col-lg-6 contact-form-item">
                         <label for="email">
                             <input type="email" name="email" id="email" placeholder="Email *">
                         </label>
                     </div>
-                    <div class="col-lg-6 contact-form-item">
+                    <div class="col-sm-12 col-lg-6 contact-form-item">
                         <label for="last-name">
                             <input type="text" name="last-name" id="last-name" placeholder="Last Name *">
                         </label>
                     </div>
-                    <div class="col-lg-6 contact-form-item">
+                    <div class="col-sm-12 col-lg-6 contact-form-item">
                         <label for="phone">
                             <input type="text" name="phone" id="phone" placeholder="Phone *">
                         </label>
@@ -745,12 +781,12 @@
     <footer class="footer">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col">
+                <div class="footer-item col-sm-12 col-lg-4">
                     <a href="#" class="footer-brand">
                         <img src="./images/logo/logo-footer.png" alt="" width="365" height="45">
                     </a>
                 </div>
-                <div class="col">
+                <div class="footer-item col-sm-12 footer-sns col-lg-4">
                     <div class="social">
                         <ul class="social-list m-0">
                             <li>
@@ -781,7 +817,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col footer-copyright">
+                <div class="footer-item col-sm-12 col-lg-4 footer-copyright">
                     <small>© 2020 ESSET, Inc.</small>
                 </div>
             </div>

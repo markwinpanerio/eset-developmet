@@ -3,6 +3,40 @@
     padding: 45px 0;
     color: $color-black;
 
+    @include max-screen(1080px) {
+        padding: 64px 0;
+    }
+
+    &-brand {
+
+        @include max-screen(768px) {
+            width: 320px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        img {
+            @include max-screen(1080px) {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    &-sns {
+        @include max-screen(1080px) {
+            text-align: center;
+        }
+    }
+
+    &-item {
+        &:not(:last-child) {
+            @include max-screen(1080px) {
+                margin-bottom: 48px;
+            }
+        }
+    }
+
     &-fixed {
         position: absolute;
         bottom: 0;
@@ -26,6 +60,10 @@
 
     &-copyright {
         text-align: right;
+
+        @include max-screen(768px) {
+            text-align: center;
+        }
 
         small {
             color: $color-gray;
