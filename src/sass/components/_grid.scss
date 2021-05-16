@@ -16,6 +16,10 @@
             width: 100%;
             padding: 0;
         }
+
+        &.hidden {
+            display: none;
+        }
     }
 
     &-box {
@@ -28,4 +32,13 @@
             font-size: 18px;
         }
     }
-  }
+
+    &-loadmore {
+        text-align: center;
+        margin-top: 50px;
+
+        .btn {
+            outline: none;
+        }
+    }
+}

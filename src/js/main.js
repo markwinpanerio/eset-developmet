@@ -8,6 +8,8 @@ jQuery(function($) {
     const $categorySidebarButton = $('.js-category-sidebar-icon');
     const $modalButton = $('.js-modal-button');
     const $modalClose = $('.js-modal-close');
+    const controller = new ScrollMagic.Controller();
+    const categoryCardContainer = $('.category-content-card');
 
     $(window).on('scroll', function() {
         if($(window).scrollTop() > 50) {
@@ -15,34 +17,6 @@ jQuery(function($) {
         } else {
             $header.removeClass('is-sticky');
         }
-    })
-
-    if($masonryGrid.length > 0) {
-        $masonryGrid.each(function(e) {
-            const $this = $(this);
-            let msnry = new Masonry( $this[0], {
-                // options
-                columnWidth: '.grid-sizer',
-                itemSelector: '.grid-item',
-                percentPosition: true,
-            });
-        })
-    }
-
-    const updateMasonry = function(){
-        $masonryGrid.each(function(e) {
-            const $this = $(this);
-            let msnry = new Masonry( $this[0], {
-                // options
-                columnWidth: '.grid-sizer',
-                itemSelector: '.grid-item',
-                percentPosition: true,
-            });
-        })
-    }
-
-    $('.nav-tabs').on('click', function(){
-        setTimeout(updateMasonry, 200)
     })
 
     $('.nav-tabs .nav-link').on('click', function(e) {
@@ -106,6 +80,22 @@ jQuery(function($) {
                 'opacity' : 1
             })
         });
+
+        if($(window).outerWidth() > 1024) {
+            categoryCardContainer.each(function() {
+                const $this = $(this);
+                const $thisSidebarNavigation = $this.find('.js-category-sidebar-navigation');
+        
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: $thisSidebarNavigation[0], 
+                    offset: $header.outerHeight() * -1.5,
+                    triggerHook: 'onLeave', 
+                    duration: 500
+                })
+                .setPin($thisSidebarNavigation[0])
+                .addTo(controller);
+            })
+        }
     })
 
     $modalButton.on('click', function(e) {
@@ -146,24 +136,23 @@ jQuery(function($) {
             }
         }
 
-        if($(window).outerWidth() <= 768) {
-            if($('.category-header-nav').is(':visible')) {
-                if (!categoryHeaderContainer.is(e.target) && categoryHeaderContainer.has(e.target).length === 0) {
-                    $categoryHeaderButton.click();
-                }
-            }
-        }
+        // if($(window).outerWidth() <= 768) {
+        //     if($('.category-header-nav').is(':visible')) {
+        //         if (!$categoryHeaderButton.is(e.target) && !categoryHeaderContainer.is(e.target) && categoryHeaderContainer.has(e.target).length === 0) {
+        //             $categoryHeaderButton.click();
+        //         }
+        //     }
+        // }
 
         if($(window).outerWidth() <= 768) {
             if($('.category-header-nav').is(':visible')) {
-                if (!categoryHeaderContainer.is(e.target) && categoryHeaderContainer.has(e.target).length === 0) {
-                    $categoryHeaderButton.removeClass('is-active');
-                    $('.category-header-nav').slideUp();
+                if (!$categoryHeaderButton.is(e.target) && !categoryHeaderContainer.is(e.target) && categoryHeaderContainer.has(e.target).length === 0) {
+                    $categoryHeaderButton.click();
                 }
             }
 
             if($categorySidebarNavigation.is(':visible')) {
-                if (!$categorySidebarNavigation.is(e.target) && $categorySidebarNavigation.has(e.target).length === 0) {
+                if (!$categorySidebarButton.is(e.target) && !$categorySidebarNavigation.is(e.target) && $categorySidebarNavigation.has(e.target).length === 0) {
                     $categorySidebarButton.click();
                 }
             }
