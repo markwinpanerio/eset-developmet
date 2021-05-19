@@ -61,7 +61,9 @@ jQuery(function ($) {
 
     $landingSlider.slick({
       arrows: false,
-      dots: true
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 5000
     });
     $('.js-modal-load-open').fadeIn(function () {
       $('.js-modal-load-open').css({
