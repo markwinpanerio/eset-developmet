@@ -1,5 +1,6 @@
 jQuery(function($) {
     const $masonryGrid = $('.js-masonry-grid');
+    const $categoryItem = $('.js-category-item');
 
     if($masonryGrid.length > 0) {
         $masonryGrid.each(function(e, masonryGrid) {
@@ -35,20 +36,43 @@ jQuery(function($) {
                 loadMore(counter, parentGrid);
             });
 
-            const $mainCategory = $this.parents('.category-content-card').find('.js-main-category');
-            const $subCategory = $this.find('.js-sub-category');
+            const $mainCategory = $this.parents('.category-content-card').find('.js-filter-category');
+            let categoryFilter = {};
 
-            $mainCategory.on('click', function() {
+            $mainCategory.on('click', function(e) {
+                e.preventDefault();
                 const $this = $(this);
-                let filterValue = $this.attr('data-parent-category');
-                // use filterFn if matches value
-                // filterValue = filterFns[filterValue] || filterValue;
-
+                let filterValue = $this.attr('data-filter-category');
                 $masonry.isotope({
                     filter: filterValue
                 });
+
+                $('html, body').animate({
+                    scrollTop: $('.category-content-card').offset().top - $('#js-header').outerHeight() * 1.5
+                })
+            })
+
+            $categoryItem.on('click', function() {
+                const $this = $(this);
+                if(!$this.hasClass('is-active')) {
+                    $categoryItem.removeClass('is-active');
+                    $this.addClass('is-active');
+                } else {
+                    $this.removeClass('is-active');
+                    $masonry.isotope({
+                        filter: ''
+                    });
+                }
             })
         })
+
+        function concatValues( obj ) {
+            let value = '';
+            for ( let prop in obj ) {
+              value += obj[ prop ];
+            }
+            return value;
+        }
 
         function loadMore(toShow, container) {
             container.find(".hidden").removeClass("hidden");

@@ -12,6 +12,7 @@ jQuery(function ($) {
   var $modalClose = $('.js-modal-close');
   var controller = new ScrollMagic.Controller();
   var categoryCardContainer = $('.category-content-card');
+  var $categorySubItem = $('.js-category-subitem');
   $landingSlider.slick({
     arrows: false,
     dots: true,
@@ -37,14 +38,26 @@ jQuery(function ($) {
   $categoryItem.on('click', function (e) {
     e.preventDefault();
     var $this = $(this);
-    $categoryItem.removeClass('is-active');
+
+    if (!$this.hasClass('is-active')) {
+      $categoryItem.removeClass('is-active');
+      $this.addClass('is-active');
+    } else {
+      $this.removeClass('is-active');
+    }
 
     if ($categoryItem.next('.js-category-subitem').is(":visible")) {
       $categoryItem.next('.js-category-subitem').slideUp();
     }
 
+    $categorySubItem.find('a').removeClass('is-active');
     $this.next('.js-category-subitem').stop().slideToggle();
-    $this.toggleClass('is-active');
+  });
+  $categorySubItem.find('a').on('click', function (e) {
+    e.preventDefault();
+    var $this = $(this);
+    $categorySubItem.find('a').removeClass('is-active');
+    $this.addClass('is-active');
   });
   $categoryHeaderButton.on('click', function (e) {
     var $this = $(this);

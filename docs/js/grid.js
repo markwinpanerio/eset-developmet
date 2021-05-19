@@ -2,8 +2,19 @@
 
 jQuery(function ($) {
   var $masonryGrid = $('.js-masonry-grid');
+  var $categoryItem = $('.js-category-item');
 
   if ($masonryGrid.length > 0) {
+    var concatValues = function concatValues(obj) {
+      var value = '';
+
+      for (var prop in obj) {
+        value += obj[prop];
+      }
+
+      return value;
+    };
+
     var loadMore = function loadMore(toShow, container) {
       container.find(".hidden").removeClass("hidden");
       var iso = container.data('isotope'); // get Isotope instance
@@ -52,16 +63,31 @@ jQuery(function ($) {
         var parentGrid = $this.parent('.grid-loadmore').prev('.js-masonry-grid');
         loadMore(counter, parentGrid);
       });
-      var $mainCategory = $this.parents('.category-content-card').find('.js-main-category');
-      var $subCategory = $this.find('.js-sub-category');
-      $mainCategory.on('click', function () {
+      var $mainCategory = $this.parents('.category-content-card').find('.js-filter-category');
+      var categoryFilter = {};
+      $mainCategory.on('click', function (e) {
+        e.preventDefault();
         var $this = $(this);
-        var filterValue = $this.attr('data-parent-category'); // use filterFn if matches value
-        // filterValue = filterFns[filterValue] || filterValue;
-
+        var filterValue = $this.attr('data-filter-category');
         $masonry.isotope({
           filter: filterValue
         });
+        $('html, body').animate({
+          scrollTop: $('.category-content-card').offset().top - $('#js-header').outerHeight() * 1.5
+        });
+      });
+      $categoryItem.on('click', function () {
+        var $this = $(this);
+
+        if (!$this.hasClass('is-active')) {
+          $categoryItem.removeClass('is-active');
+          $this.addClass('is-active');
+        } else {
+          $this.removeClass('is-active');
+          $masonry.isotope({
+            filter: ''
+          });
+        }
       });
     });
   }
