@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 20;
 
     @include max-screen(1440px) {
         padding: (100px + 111) 0 136px;
