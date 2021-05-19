@@ -110,17 +110,24 @@ jQuery(function ($) {
     e.preventDefault();
     var $this = $(this);
     var $target = $this.data('modal-target');
-    $($target).stop().fadeToggle(function () {
-      $($target).css({
+    $target = $($target);
+    var iframeSource = $target.attr('data-iframe-src');
+    $target.stop().fadeToggle(function () {
+      if (typeof iframeSource !== 'undefined') {
+        $target.find('iframe').attr("src", iframeSource + "?autoplay=1&autohide=1&fs=1&rel=0&hd=1&wmode=opaque&enablejsapi=1&controls=0");
+      }
+
+      $target.css({
         'display': 'flex'
       });
-      $($target).animate({
+      $target.animate({
         'opacity': 1
       });
     });
   });
   $modalClose.on('click', function () {
     $('.js-modal').fadeOut();
+    $('.js-modal').find('iframe').attr("src", null);
   });
   $(document).mouseup(function (e) {
     var container = $(".custom-modal-container");
@@ -131,6 +138,7 @@ jQuery(function ($) {
     if ($('.js-modal').is(':visible')) {
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         $('.js-modal').fadeOut();
+        $('.js-modal').find('iframe').attr("src", null);
       }
     }
 

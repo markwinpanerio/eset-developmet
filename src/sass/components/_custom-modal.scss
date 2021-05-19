@@ -11,6 +11,7 @@
     justify-content: center;
     padding: 100px 0;
     opacity: 0;
+    z-index: 25;
 
     @include max-screen(1080px) {
         overflow: scroll;
@@ -30,7 +31,8 @@
         }
 
         img,
-        video {
+        video,
+        iframe {
             position: absolute;
             top: 0;
             left: 0;
