@@ -16,7 +16,7 @@
     .container-fluid {
         @include max-screen(768px) {
             padding: 0;
-        }   
+        }
     }
 
     &-inner {

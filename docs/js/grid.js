@@ -27,7 +27,7 @@ jQuery(function ($) {
     $masonryGrid.each(function (e, masonryGrid) {
       var $this = $(masonryGrid);
       var flag = e + 1;
-      $this.isotope({
+      var $masonry = $this.isotope({
         // options
         columnWidth: '.grid-sizer',
         itemSelector: '.grid-item',
@@ -44,7 +44,7 @@ jQuery(function ($) {
 
       var counter = 3; //counter for load more button
 
-      loadMore(initShow, $this); //execute function onload
+      loadMore(initShow, $masonry); //execute function onload
 
       $(".js-load-more").on('click', function () {
         counter = counter + initShow;
@@ -52,8 +52,17 @@ jQuery(function ($) {
         var parentGrid = $this.parent('.grid-loadmore').prev('.js-masonry-grid');
         loadMore(counter, parentGrid);
       });
-      var $mainCategory = $this.find('.js-main-category');
+      var $mainCategory = $this.parents('.category-content-card').find('.js-main-category');
       var $subCategory = $this.find('.js-sub-category');
+      $mainCategory.on('click', function () {
+        var $this = $(this);
+        var filterValue = $this.attr('data-parent-category'); // use filterFn if matches value
+        // filterValue = filterFns[filterValue] || filterValue;
+
+        $masonry.isotope({
+          filter: filterValue
+        });
+      });
     });
   }
 });

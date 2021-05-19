@@ -12,6 +12,12 @@ jQuery(function ($) {
   var $modalClose = $('.js-modal-close');
   var controller = new ScrollMagic.Controller();
   var categoryCardContainer = $('.category-content-card');
+  $landingSlider.slick({
+    arrows: false,
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 5000
+  });
   $(window).on('scroll', function () {
     if ($(window).scrollTop() > 50) {
       $header.addClass('is-sticky');
@@ -31,6 +37,12 @@ jQuery(function ($) {
   $categoryItem.on('click', function (e) {
     e.preventDefault();
     var $this = $(this);
+    $categoryItem.removeClass('is-active');
+
+    if ($categoryItem.next('.js-category-subitem').is(":visible")) {
+      $categoryItem.next('.js-category-subitem').slideUp();
+    }
+
     $this.next('.js-category-subitem').stop().slideToggle();
     $this.toggleClass('is-active');
   });
@@ -59,12 +71,6 @@ jQuery(function ($) {
       $header.removeClass('is-sticky');
     }
 
-    $landingSlider.slick({
-      arrows: false,
-      dots: true,
-      autoplay: true,
-      autoplaySpeed: 5000
-    });
     $('.js-modal-load-open').fadeIn(function () {
       $('.js-modal-load-open').css({
         'display': 'flex'

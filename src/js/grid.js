@@ -6,7 +6,7 @@ jQuery(function($) {
             const $this = $(masonryGrid);
             const flag = e + 1;
 
-            $this.isotope({
+            const $masonry = $this.isotope({
                 // options
                 columnWidth: '.grid-sizer',
                 itemSelector: '.grid-item',
@@ -24,7 +24,7 @@ jQuery(function($) {
             var initShow = 9; //number of items loaded on init & onclick load more button
             var counter = 3; //counter for load more button
 
-            loadMore(initShow, $this); //execute function onload
+            loadMore(initShow, $masonry); //execute function onload
 
 
 
@@ -35,8 +35,19 @@ jQuery(function($) {
                 loadMore(counter, parentGrid);
             });
 
-            const $mainCategory = $this.find('.js-main-category');
+            const $mainCategory = $this.parents('.category-content-card').find('.js-main-category');
             const $subCategory = $this.find('.js-sub-category');
+
+            $mainCategory.on('click', function() {
+                const $this = $(this);
+                let filterValue = $this.attr('data-parent-category');
+                // use filterFn if matches value
+                // filterValue = filterFns[filterValue] || filterValue;
+
+                $masonry.isotope({
+                    filter: filterValue
+                });
+            })
         })
 
         function loadMore(toShow, container) {
