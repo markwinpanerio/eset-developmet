@@ -52,6 +52,8 @@ jQuery(function ($) {
         var parentGrid = $this.parent('.grid-loadmore').prev('.js-masonry-grid');
         loadMore(counter, parentGrid);
       });
+      var $mainCategory = $this.find('.js-main-category');
+      var $subCategory = $this.find('.js-sub-category');
     });
   }
 });

@@ -8,8 +8,8 @@
     <title>ESET</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="./dependencies/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./dependencies/slick/slick.min.css"/>
+    <link rel="stylesheet" href="./dependencies/slick/slick-theme.min.css"/>
     <link href="http://fonts.cdnfonts.com/css/segoe-ui-4" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -324,29 +324,30 @@
                                     </form>
                                     <ul class="category-sidebar-list js-category-parent">
                                         <li class="category-sidebar-item">
-                                            <a href="#" class="js-main-category js-category-item is-active">
+                                            <a href="#" class="js-main-category js-category-item is-active" data-parent-category=".js-main-category-a">
                                                 Category A
                                                 <span class="icon"></span>
                                             </a>
                                             <ul class="js-category-subitem is-active">
                                                 <li>
-                                                    <a href="#" class="is-active">Sub Category 1</a>
+                                                    <a href="#" class="is-active js-sub-category" data-sub-category=".js-sub-category-a-1">Sub Category 1</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Sub Category 2</a>
+                                                    <a href="#" class="js-sub-category" data-sub-category=".js-sub-category-a-2">Sub Category 2</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li class="category-sidebar-item">
-                                            <a href="#" class="js-main-category">
+                                            <a href="#" class="js-main-category js-category-item" data-parent-category=".js-main-category-b">
                                                 Category B
+                                                <span class="icon"></span>
                                             </a>
-                                            <ul>
+                                            <ul class="js-category-subitem">
                                                 <li>
-                                                    <a href="#">Sub Category 1</a>
+                                                    <a href="#" class="js-sub-category" data-sub-category=".js-sub-category-b-1">Sub Category 1</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Sub Category 2</a>
+                                                    <a href="#" class="js-sub-category" data-sub-category=".js-sub-category-b-2">Sub Category 2</a>
                                                 </li>
                                             </ul>
                                         </li>

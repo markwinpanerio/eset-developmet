@@ -34,6 +34,9 @@ jQuery(function($) {
                 const parentGrid = $this.parent('.grid-loadmore').prev('.js-masonry-grid')
                 loadMore(counter, parentGrid);
             });
+
+            const $mainCategory = $this.find('.js-main-category');
+            const $subCategory = $this.find('.js-sub-category');
         })
 
         function loadMore(toShow, container) {
